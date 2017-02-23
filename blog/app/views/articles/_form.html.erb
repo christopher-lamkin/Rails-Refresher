@@ -1,6 +1,6 @@
 <%= form_for @article do |f| %>
 
-  <% if @article.error.any? %>
+  <% if @article.errors.any? %>
     <div id="error_explanation">
       <h2>
         <%= pluralize(@article.errors.count, "error") %> prevented this article from being saved.
@@ -17,10 +17,10 @@
       <%= f.label :title %>
       <%= f.text_field :title %>
     </p>
-    
+
     <p>
       <%= f.label :text %>
-      <%= f.label :text_area %>
+      <%= f.text_area :text %>
     </p>
 
     <p>
